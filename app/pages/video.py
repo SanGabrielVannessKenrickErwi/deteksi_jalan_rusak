@@ -68,7 +68,6 @@ def infer_uploaded_video(conf, model):
                         output_video.write(frame)
 
                     output_video.release()
-                    st.video(output)
 
 
 def main():
