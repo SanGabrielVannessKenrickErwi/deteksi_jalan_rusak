@@ -3,7 +3,7 @@ import streamlit as st
 
 from PIL import Image
 
-model_path = "runs/detect/train18/weights/best.pt"
+model_path = "app/best.pt"
 
 model = YOLO(model_path)
 st.set_page_config(

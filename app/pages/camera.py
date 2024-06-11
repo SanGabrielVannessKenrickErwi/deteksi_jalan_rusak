@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import streamlit as st
 import cv2
 
-model_path = "runs/detect/train18/weights/best.pt"
+model_path = "app/best.pt"
 
 model = YOLO(model_path)
 
