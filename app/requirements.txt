@@ -1,5 +1,5 @@
 ultralytics==8.1.18
-opencv-python-headless==4.8.0.74
+opencv-python-headless==4.8.0.76
 opencv-python==4.7.0.72
 temp==2020.7.2
 streamlit==1.35.0
