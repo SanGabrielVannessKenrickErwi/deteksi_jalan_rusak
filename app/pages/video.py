@@ -63,12 +63,12 @@ def infer_uploaded_video(conf, model):
 
                     output = "annotated_video.mp4"
 
-                    output_video = cv2.VideoWriter("annotated_video.mp4", cv2.VideoWriter_fourcc(*'h264'), 30, (width, height))
+                    output_video = cv2.VideoWriter(output, cv2.VideoWriter_fourcc(*'h264'), 30, (width, height))
                     for frame in output_frames:
                         output_video.write(frame)
 
                     output_video.release()
-                    st.video("annotated_video.mp4")
+                    st.video(output)
 
 
 def main():
