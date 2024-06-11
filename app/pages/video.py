@@ -2,6 +2,7 @@ from ultralytics import YOLO
 import streamlit as st
 import cv2
 import tempfile
+import os
 
 model_path = "app/best.pt"
 
@@ -43,10 +44,11 @@ def infer_uploaded_video(conf, model):
         if st.button("Submit"):
             with st.spinner("Running..."):
                 try:
-                    tfile = tempfile.NamedTemporaryFile()
-                    tfile.write(source_video.read())
-                    vid_cap = cv2.VideoCapture(
-                        tfile.name)
+                    temp_dir = tempfile.mkdtemp()
+                    path = os.path.join(temp_dir, source_video.name)
+                    with open(path, "wb") as f:
+                        f.write(source_video.getvalue())
+                    vid_cap = cv2.VideoCapture(path)
                     st_frame = st.empty()
                     while (vid_cap.isOpened()):
                         success, image = vid_cap.read()
