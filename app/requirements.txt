@@ -1,0 +1,5 @@
+ultralytics==8.2.31
+opencv-python-headless==4.10.0.82
+opencv-python==4.10.0.82
+temp==2020.7.2
+streamlit==1.29.0
